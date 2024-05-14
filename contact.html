@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <div class="logo">
+          <img class="logopic" src="logo.jpg" alt="" width="50px" />
+        </div>
+        <div class="menu">
+          <a href="about.html">About Us</a>
+          <a href="index.html">Preview</a>
+          <a href="contact.html">Contact</a>
+        </div>
+        <div class="social">
+          <a href="https://www.instagram.com/inderdesigns.in/" target="_blank">
+            Direct <br />
+            Message</a
+          >
+        </div>
+      </div>
+
+      <div class="contact-container">
+        <form name="submit-to-google-sheet">
+          <h3>LET'S TALK BUDDY!!!</h3>
+          <input type="text" name="Name" id="name" placeholder="Your Name" required />
+          <input type="email" name="Email" id="email" placeholder="Email id" required />
+          <input type="text" name="Phone" id="phone" placeholder="Mobile no." />
+          <textarea
+          name="Message"
+            id="message"
+            rows="4"
+            placeholder="How can we help you?"
+            required
+          ></textarea>
+          <h3 id="msg"></h3>
+          <button type="submit">Send</button>
+        </form>
+      </div>
+      <div class="myInfo">
+        <h1>Feel free to connect...</h1>
+        <h2>WhatsApp: +91 6378332893</h2>
+        <h2>Email: inderdesigns7@gmail.com</h2>
+        <h2>Instagram: click DM above Top Right</h2>
+      </div>
+    </div>
+<script>
+  const scriptURL = 'https://script.google.com/macros/s/AKfycbzR4iu23szpf7Btf3ettk2HB2Ea_yFxRwHJcr8Ojub1l1woSOXId8evVlfwhAIwSdw0Fg/exec'
+  const form = document.forms['submit-to-google-sheet']
+    const msg = document.getElementById("msg")
+  form.addEventListener('submit', e => {
+    e.preventDefault()
+    fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+      .then(response => {
+        msg.innerHTML = "Message sent successfully..."; 
+        setTimeout(function(){
+            msg.innerHTML = "";
+        }, 5000)
+        form.reset();
+      })
+      .catch(error => console.error('Error!', error.message))
+  })
+</script>
+  </body>
+</html>
