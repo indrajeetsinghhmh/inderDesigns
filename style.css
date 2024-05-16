@@ -223,10 +223,27 @@ h3 {
   height: 250px;
   transition: all 0.3s ease;
 }
+.coverArt{
+  display: flex;
+  padding: 45px;
+  gap: 13px;
+  column-gap: 75px;
+  justify-content: center;
+}
+.coverArt img{
+  transition: all 0.3s ease;
+  border-radius: 15px;
+  height: 350px;
+}
+.coverArt img:hover{
+   box-shadow: 1px 1px 8px #000000;
+    background-color: #ccdee7;
+    transform: translateY(7px);
+}
 .thumb3 img:hover, .thumb2 img:hover{
    box-shadow: 1px 1px 8px #000000;
     background-color: #ccdee7;
-    transform: translateY(-2px);
+    transform: translateY(-4px);
 }
 
 
