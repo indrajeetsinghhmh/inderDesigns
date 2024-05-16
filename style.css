@@ -320,7 +320,6 @@ h3 {
 }
 .coverArt img{
   border-radius: 15px;
-  height: 250px;
   transition: all 0.3s ease;
 }
 .thumb3 img:hover, .thumb2 img:hover{
